@@ -1,7 +1,7 @@
 node{
-      def mvnHome = tool name: 'maven 3.6.2', type: 'maven' 
+      def mvnHome = "/home/jawwad/apache-maven-3.6.2"
       stage('Checkout'){
-         git 'https://github.com/LovesCloud/java-tomcat-maven-example'
+         git 'https://github.com/jawwadmohammad/maven_tomcate'
        
       }  
       stage('Build'){
