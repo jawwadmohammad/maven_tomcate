@@ -12,15 +12,12 @@ node{
          sh "'${mvnHome}/bin/mvn' test surefire-report:report"
       }  
     
-      stage('Deploy') { 
-            agent {
-        node {
-          label "master"
-               cp ~/.jenkins/workspace/tomcate_pipeline/target/tomcatdeploymnetdemo.war jawwad@192.168.112.131:/home/jawwad/apache-tomcat-8.0.53/webapps'
-              
+       stage('Deploy') {
+            sshagent(['master']) {
+               sh 'scp -o StrictHostKeyChecking=no target/tomcatdeploymnetdemo.war jawwad@192.168.112.131:/home/jawwad/apache-tomcat-8.0.53/webapps'
+
           }
-         
+
      }
-      
+
  }
-}
