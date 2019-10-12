@@ -13,8 +13,8 @@ node{
       }  
     
       stage('Deploy') {     
-            sshagent(['Tomcat-jenkins']) {
-               sh 'scp -o StrictHostKeyChecking=no target/tomcatdeploymnetdemo.war jenkins@35.193.54.220:/opt/tomcat/webapps'
+            sshagent(['32a77e75-021c-4e18-819a-f04bd5f8359d']) {
+               sh 'scp -o StrictHostKeyChecking=no target/tomcatdeploymnetdemo.war jawwad@192.168.112.131:/home/jawwad/apache-tomcat-8.0.53/webapps'
               
           }
          
